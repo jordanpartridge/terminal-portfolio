@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace JordanPartridge\TerminalPortfolio\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class TerminalPortfolioCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'terminal-portfolio';
 
     public $description = 'My command';
 
