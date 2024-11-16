@@ -3,6 +3,8 @@
 namespace JordanPartridge\TerminalPortfolio;
 
 use JordanPartridge\TerminalPortfolio\Commands\TerminalPortfolioCommand;
+use JordanPartridge\TerminalPortfolio\Components\Terminal;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -21,5 +23,16 @@ class TerminalPortfolioServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_terminal_portfolio_table')
             ->hasCommand(TerminalPortfolioCommand::class);
+    }
+
+    public function boot(): void
+    {
+        $this->loadViewComponentsAs('', [
+            Terminal::class,
+        ]);
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'terminal');
+
+        Livewire::component('terminal', Terminal::class);
     }
 }

@@ -4,6 +4,9 @@
     "keywords": [
         "Jordan L. Partridge",
         "laravel",
+        "livewire",
+        "termininal",
+        "portfolio",
         "terminal-portfolio"
     ],
     "homepage": "https://github.com/jordanpartridge/terminal-portfolio",
@@ -17,8 +20,9 @@
     ],
     "require": {
         "php": "^8.2",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0"
+        "illuminate/contracts": "^10.0||^11.0",
+        "livewire/livewire": "^3.5",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
