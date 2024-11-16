@@ -2,7 +2,6 @@
 
 namespace JordanPartridge\TerminalPortfolio;
 
-use JordanPartridge\TerminalPortfolio\Commands\TerminalPortfolioCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
