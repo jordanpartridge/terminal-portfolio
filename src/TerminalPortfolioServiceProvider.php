@@ -20,13 +20,9 @@ class TerminalPortfolioServiceProvider extends PackageServiceProvider
             ->name('terminal-portfolio')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_terminal_portfolio_table')
-            ->hasCommand(TerminalPortfolioCommand::class)
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
-                    ->publishAssets()
-                    ->publishMigrations()
                     ->copyAndRegisterServiceProviderInApp()
                     ->askToStarRepoOnGitHub('jordanpartridge/terminal-portfolio');
             });
