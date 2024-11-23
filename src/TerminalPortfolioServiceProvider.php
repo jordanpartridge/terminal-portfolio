@@ -2,7 +2,7 @@
 
 namespace JordanPartridge\TerminalPortfolio;
 
-use JordanPartridge\TerminalPortfolio\Commands\TerminalPortfolioCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +19,11 @@ class TerminalPortfolioServiceProvider extends PackageServiceProvider
             ->name('terminal-portfolio')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_terminal_portfolio_table')
-            ->hasCommand(TerminalPortfolioCommand::class);
+            ->hasInstallCommand(function (InstallCommand $command) {
+                $command
+                    ->publishConfigFile()
+                    ->copyAndRegisterServiceProviderInApp()
+                    ->askToStarRepoOnGitHub('jordanpartridge/terminal-portfolio');
+            });
     }
 }
